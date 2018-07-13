@@ -1,3 +1,3 @@
 # GitHub research journal
 
-Organizing research outputs into a version-controlled repository.
+Organizing research outputs and artifacts into a version-controlled repository.

@@ -68,3 +68,91 @@ ABSTRACT={In order to understand how the mammalian neocortex is performing compu
   biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1802-05405},
   bibsource = {dblp computer science bibliography, https://dblp.org}
 }
+
+@ARTICLE{6796089, 
+author={R. V. Florian}, 
+journal={Neural Computation}, 
+title={Reinforcement Learning Through Modulation of Spike-Timing-Dependent Synaptic Plasticity}, 
+year={2007}, 
+volume={19}, 
+number={6}, 
+pages={1468-1502}, 
+keywords={}, 
+doi={10.1162/neco.2007.19.6.1468}, 
+ISSN={0899-7667}, 
+month={June},}
+
+@ARTICLE{10.3389/fnins.2016.00508,
+AUTHOR={Lee, Jun Haeng and Delbruck, Tobi and Pfeiffer, Michael},   
+TITLE={Training Deep Spiking Neural Networks Using Backpropagation},      
+JOURNAL={Frontiers in Neuroscience},      
+VOLUME={10},
+PAGES={508},     
+YEAR={2016},      
+URL={https://www.frontiersin.org/article/10.3389/fnins.2016.00508},       
+DOI={10.3389/fnins.2016.00508},      
+ISSN={1662-453X},   
+ABSTRACT={Deep spiking neural networks (SNNs) hold the potential for improving the latency and energy efficiency of deep neural networks through data-driven event-based computation. However, training such networks is difficult due to the non-differentiable nature of spike events. In this paper, we introduce a novel technique, which treats the membrane potentials of spiking neurons as differentiable signals, where discontinuities at spike times are considered as noise. This enables an error backpropagation mechanism for deep SNNs that follows the same principles as in conventional deep networks, but works directly on spike signals and membrane potentials. Compared with previous methods relying on indirect training and conversion, our technique has the potential to capture the statistics of spikes more precisely. We evaluate the proposed framework on artificially generated events from the original MNIST handwritten digit benchmark, and also on the N-MNIST benchmark recorded with an event-based dynamic vision sensor, in which the proposed method reduces the error rate by a factor of more than three compared to the best previous SNN, and also achieves a higher accuracy than a conventional convolutional neural network (CNN) trained and tested on the same data. We demonstrate in the context of the MNIST task that thanks to their event-driven operation, deep SNNs (both fully connected and convolutional) trained with our  method achieve accuracy equivalent with conventional neural networks. In the N-MNIST example, equivalent accuracy is achieved with about five times fewer computational operations.}
+}
+
+@ARTICLE{10.3389/fncom.2018.00024,
+AUTHOR={Ferré, Paul and Mamalet, Franck and Thorpe, Simon J.},   
+TITLE={Unsupervised Feature Learning With Winner-Takes-All Based STDP},      
+JOURNAL={Frontiers in Computational Neuroscience},      
+VOLUME={12},     
+PAGES={24},     
+YEAR={2018},      
+URL={https://www.frontiersin.org/article/10.3389/fncom.2018.00024},       
+DOI={10.3389/fncom.2018.00024},      
+ISSN={1662-5188},   
+ABSTRACT={We present a novel strategy for unsupervised feature learning in image applications inspired by the Spike-Timing-Dependent-Plasticity biological learning rule. We show equivalence between rank order coding Leaky-Integrate-and-Fire neurons and ReLU artificial neurons when applied to non-temporal data. We apply this to images using rank-order coding, which allows us to perform a full network simulation with a single feed-forward pass using GPU hardware. Next we introduce a binary Spike-Timing-Dependent-Plasticity learning rule compatible with training on batches of images. Two mechanisms to stabilize the training are also presented : a Winner-Takes-All framework which selects the most relevant patches to learn from along the spatial dimensions, and a simple feature-wise normalization as homeostatic process. This learning process allows us to train multi-layer architectures of convolutional sparse features.
+We apply our method to extract features from the MNIST, ETH80, CIFAR-10 and STL-10 datasets and show that these features are relevant for classification. We finally compare these results with several other state of the art unsupervised learning methods.}
+}
+
+@ARTICLE{2017arXiv170509558S,
+   author = {{Saatchi}, Y. and {Wilson}, A.~G.},
+    title = "{Bayesian GAN}",
+  journal = {ArXiv e-prints},
+archivePrefix = "arXiv",
+   eprint = {1705.09558},
+ primaryClass = "stat.ML",
+ keywords = {Statistics - Machine Learning, Computer Science - Artificial Intelligence, Computer Science - Computer Vision and Pattern Recognition, Computer Science - Learning},
+     year = 2017,
+    month = may,
+   adsurl = {http://adsabs.harvard.edu/abs/2017arXiv170509558S},
+  adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+@ARTICLE{2018arXiv180601261B,
+   author = {{Battaglia}, P.~W. and {Hamrick}, J.~B. and {Bapst}, V. and 
+	{Sanchez-Gonzalez}, A. and {Zambaldi}, V. and {Malinowski}, M. and 
+	{Tacchetti}, A. and {Raposo}, D. and {Santoro}, A. and {Faulkner}, R. and 
+	{Gulcehre}, C. and {Song}, F. and {Ballard}, A. and {Gilmer}, J. and 
+	{Dahl}, G. and {Vaswani}, A. and {Allen}, K. and {Nash}, C. and 
+	{Langston}, V. and {Dyer}, C. and {Heess}, N. and {Wierstra}, D. and 
+	{Kohli}, P. and {Botvinick}, M. and {Vinyals}, O. and {Li}, Y. and 
+	{Pascanu}, R.},
+    title = "{Relational inductive biases, deep learning, and graph networks}",
+  journal = {ArXiv e-prints},
+archivePrefix = "arXiv",
+   eprint = {1806.01261},
+ primaryClass = "cs.LG",
+ keywords = {Computer Science - Learning, Computer Science - Artificial Intelligence, Statistics - Machine Learning},
+     year = 2018,
+    month = jun,
+   adsurl = {http://adsabs.harvard.edu/abs/2018arXiv180601261B},
+  adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+@ARTICLE{2018arXiv180402464M,
+   author = {{Miconi}, T. and {Clune}, J. and {Stanley}, K.~O.},
+    title = "{Differentiable plasticity: training plastic neural networks with backpropagation}",
+  journal = {ArXiv e-prints},
+archivePrefix = "arXiv",
+   eprint = {1804.02464},
+ keywords = {Computer Science - Neural and Evolutionary Computing, Computer Science - Learning, Statistics - Machine Learning},
+     year = 2018,
+    month = apr,
+   adsurl = {http://adsabs.harvard.edu/abs/2018arXiv180402464M},
+  adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}

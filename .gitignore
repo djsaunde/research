@@ -1,2 +1,8 @@
 # Swap files
 *.swp
+
+# pycache
+read/__pycache__
+
+# XML
+*.xml

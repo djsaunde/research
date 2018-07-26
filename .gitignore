@@ -6,3 +6,6 @@ read/__pycache__
 
 # XML
 *.xml
+
+# Jupyter notebook checkpointing
+*.ipynb_checkpoints

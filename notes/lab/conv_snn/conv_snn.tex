@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Convolutional Spiking Neural Networks}
+
+\begin{document}
+
+\maketitle
+
+This document tracks the progress of the BINDS lab on studying convolutional spiking neural networks (C-SNNs). All 
+
+\textbf{Note}: All \texttt{code} is assumed to be BindsNET syntax.
+
+\section{Locally-connected SNNs}
+
+TODO.
+
+\section{Two-layer convolutional SNNs}
+
+\subsection{Basic structure}
+
+An layer of \texttt{Input} neurons (layer \texttt{X}) equal to the size of the input data (e.g., MNIST or CIFAR-10) is connected via a \texttt{Conv2dConnection} with STDP-modifiable [citation needed] synapses to a layer of \texttt{AdaptiveLIFNodes} or \texttt{DiehlAndCook2015Nodes} (layer \texttt{Y}). Layer \texttt{Y} is recurrently connected to itself with inhibitory synapses via a \texttt{Connection}.
+
+Layer \texttt{Y} may be driven by \texttt{bernoulli()}- or \texttt{poisson()}-distributed spikes parametrized by the input data; since the networks are operating in an effectively rate-based regime, Bernoulli spikes may be preferred for efficiency reasons. \textbf{Note}: Additionally, the implementation of \texttt{poisson()} may be incorrect at this stage.
+
+The goal of the convolutional layer is to learn a (compact) set of weight kernels (filters) which reliably detect salient features in the input space. The weight kernels ``slide'' across the input space with a regular horizontal and vertical \textit{stride}, and are multiplied by the activations at each input location to produce an activation value for a unique neuron in the next layer.
+
+This technique has been successful in convolutional neural networks (CNNs) of deep learning; however, the neural model is much simplified, and the network can be efficiently trained using optimization techniques (stochastic gradient descent (SGD)). In the case of SNNs, the input activations are converted into spike trains, and the output of the convolution can be interpreted as current to be injected into the post-synaptic layer. 
+
+\subsection{Recurrent connectivity}
+
+There are some variants of connectivity of the recurrent connection for layer \texttt{Y}.
+
+\subsubsection{Inhibit all neurons with same receptive field}
+
+\subsubsection{Inhibit all other neurons}
+
+In the spirit of Diehl \& Cook 2015 [citation needed], each neuron in layer \texttt{Y} is connected with an inhibitory synapse to all other neurons in the layer. This creates a simple competitive mechanism: when a neuron fires, all other neurons are damped, allowing the ``winning'' neuron to continue firing and to update its weights in the direction of the current input pattern. This is similar to the idea of a \textit{winner-take-all (WTA) circuit} [citation needed].
+
+The result of this training is improved clarity of weight kernels. Since (typically) only one neuron is able to fire consistently, that neuron can significantly update the weights of the filter (using STDP) in the direction of the stimulus that is firing it; i.e., the input data.
+
+One downside of this approach is that, since we are using a WTA-like mechanism on the ``output'' layer (\texttt{Y}), its activation is very sparse and perhaps not useful for further processing. Since each neuron is only detecting a small feature of the input data ()
+
+\subsection{Architectural modifications}
+
+\subsubsection{Duplicate layer \texttt{Y} without recurrent connectivity}
+
+\end{document}

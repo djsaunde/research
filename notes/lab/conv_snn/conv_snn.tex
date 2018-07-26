@@ -1,7 +1,11 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage[left=2cm, right=4cm, top=2cm]{geometry}
+\usepackage{graphicx}
+\graphicspath{ {../../../figures/snn/} }
 
 \title{Convolutional Spiking Neural Networks}
+\author{Daniel Saunders}
 
 \begin{document}
 
@@ -22,6 +26,12 @@ TODO.
 An layer of \texttt{Input} neurons (layer \texttt{X}) equal to the size of the input data (e.g., MNIST or CIFAR-10) is connected via a \texttt{Conv2dConnection} with STDP-modifiable [citation needed] synapses to a layer of \texttt{AdaptiveLIFNodes} or \texttt{DiehlAndCook2015Nodes} (layer \texttt{Y}). Layer \texttt{Y} is recurrently connected to itself with inhibitory synapses via a \texttt{Connection}.
 
 Layer \texttt{Y} may be driven by \texttt{bernoulli()}- or \texttt{poisson()}-distributed spikes parametrized by the input data; since the networks are operating in an effectively rate-based regime, Bernoulli spikes may be preferred for efficiency reasons. \textbf{Note}: Additionally, the implementation of \texttt{poisson()} may be incorrect at this stage.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{two_layer_convolutional_snn.png}
+	\caption{Schematic diagram of the structure of a two-layer convolutional spiking neural network. For ease of presentation, all data, layers, and weight kernels are depicted as two-dimensional (as in the case of gray-scale image processing). Input data encoded into spike trains is used for the activity of an input layer. Weight kernels are ``slid'' across the input space, multiplied by the input activations, and projected to unique neurons in the corresponding sub-population in the convolutional layer (one per weight kernel). The convolutional layer has inhibitory, recurrent connections, establishing a competition for spiking activity.}
+\end{figure}
 
 The goal of the convolutional layer is to learn a (compact) set of weight kernels (filters) which reliably detect salient features in the input space. The weight kernels ``slide'' across the input space with a regular horizontal and vertical \textit{stride}, and are multiplied by the activations at each input location to produce an activation value for a unique neuron in the next layer.
 

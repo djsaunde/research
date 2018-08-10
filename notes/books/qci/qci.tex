@@ -5,6 +5,8 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 
+\newcommand{\bracket}[1]{|#1\rangle}
+
 \graphicspath{ {../../../figures/qci} }
 
 \title{Notes: Quantum Computation and Quantum Information: 10th Anniversary Edition}
@@ -17,7 +19,7 @@
 \textbf{Notes}
 
 \begin{enumerate}
-	\item Some \textit{emphasis} is from is book, some is added.
+	\item Some \textit{emphasis} is from the book, some is added.
 	\item Abbreviations such as QC may interchangeably refer to quantum computation and quantum computer.
 \end{enumerate}
 
@@ -109,5 +111,47 @@ Shannon answered these questions with two fundamental IT theorems:
 A sophisticated theory of ECCs now exists.
 
 Quantum information theory (QIT) follows a similar developments. 1995: \href{https://en.wikipedia.org/wiki/Benjamin_Schumacher}{Ben Schumacher} provided an another of the noiseless channel coding theorem and defined the \textit{quantum bit}, or \textit{qubit}, as the tangible physical resource. No analogue to the noisy channel coding theorem is known for QIT. A theory of quantum EC (QEC) has been developed, allowing QCs to compute effectively in the presence of noise, and allows reliable communcation over noisy quantum channels.
+
+1992: Charles Bennett and Stephen Wiesner showed how to transmit two classical bits of information while only transmitting one quantum bit; called \textit{superdense coding}.
+
+\textit{Distributed quantum computation}: exponentially less communication is sometimes required to solve problems with networked QCs than with networked CCs.
+
+\textit{Networked information theory}: The study of networks of multiple communications channels.
+
+Study of networked QIT is in its infancy; no unifying theory of networked IT exists for QCs. 
+
+\textbf{Turning to cryptography}:
+
+Cryptography is the problem of doing communication or computation with two or more parties who many not trust each other. Secret communication can be accomplished using a \textit{cryptographic protocol}, distinguishing between \textit{private key} and \textit{public key cryptosystems}.
+
+\textit{Quantum cryptography} or \textit{quantum key distribution} allows for private crypto key distribution such that Alice and Bob's security cannot be compromised. Basic idea: exploit QM principle that observations disturbs QM systems. Eavesdroppers can be detected as a disturbance of the communication channel Alice and Bob use to establish a private key. 1984: Charles Bennet and Gilles Brassard proposed a QM protocol to distribute keys between Alice and Bob without possibility of compromise.
+
+\textit{Public key cryptosystems}: Bob publishes a ``public key'' which Alice uses to encrypt a message to Bob, which is extremely difficult to decrypt without the private key known only to Bob. Such cryptosystems solve the key distribution problem by making it unnecessary to share private keys before communication.
+
+Presumed security of the \textit{RSA cryptosystem} relies on the belief that factoring is hard to solve using CCs. Shor's algorithm for factoring on QCs could break RSA!
+
+\textit{Quantum entanglement}: uniquely QM \textit{resource} that plays a role in many interesting applications of QCI; not well understood.
+
+\subsubsection{Future directions}
+
+QCI has taught us to \textit{think physically about computation}; any physical theory may be used as the basis for a theory of information processing and communication. On the other hand, we may also \textit{think computationally about physics}. Physics has traditionally focused on understanding elementary objects and simple systems; computation and algorithms provide means for constructing and understanding complex systems.
+
+\subsection{Quantum bits}
+
+QCI are built on a concept analogous the to classical \textit{bit}, the \textit{qubit} or \textit{quantum bit}. They have a physical realization, but will be described as \textit{mathematical objects} with certain properties, since treating them as abstract entities gives the freedom to construct a general theory of QCI which doesn't depend on a specific physical system for realization.
+
+A qubit has a \textit{state}, just like a bit. Two possible states are $\bracket{0}$ and $\bracket{1}$, corresponding to the 0 and 1 states for classical bits. This is called the \textit{Dirac notation}. It's possible to form \textit{linear combinations} of states, often called \textit{superpositions}:
+
+\begin{equation}
+\bracket{\psi} = \alpha \bracket{0} + \beta \bracket{1}.
+\end{equation}
+
+The numbers $\alpha$ and $\beta$ are complex numbers, and the state of a qubit is a vector in a two-dimensional complex vector space. The special states $\bracket{0}$ and $\bracket{1}$ are called \textit{computational basis states} and form an orthonormal basis for the vector space.
+
+We can't examine a qubit to determine its quantum state (the values of $\alpha$ and $\beta$). We can acquire more restricted information by measuring a qubit a obtaining a 0 with probability $|\alpha|^2$ or a 1 with probability $|\beta|^2$. Thus, a qubit's state is a unit vector in a two-dimensional complex vector space.
+
+There is an indirect correspondence between qubit states and their consequences, and they can be manipulated and transformed in ways that lead to measurement outcomes that depend on their properties.
+
+
 
 \end{document}

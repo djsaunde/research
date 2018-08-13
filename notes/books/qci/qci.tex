@@ -4,10 +4,11 @@
 \usepackage[left=2cm, right=4cm, top=2cm]{geometry}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{amsfonts}
 
 \newcommand{\bracket}[1]{|#1\rangle}
 
-\graphicspath{ {../../../figures/qci} }
+\graphicspath{ {../../../figures/qci/} }
 
 \title{Notes: Quantum Computation and Quantum Information: 10th Anniversary Edition}
 \author{Daniel Saunders}
@@ -142,7 +143,7 @@ QCI are built on a concept analogous the to classical \textit{bit}, the \textit{
 
 A qubit has a \textit{state}, just like a bit. Two possible states are $\bracket{0}$ and $\bracket{1}$, corresponding to the 0 and 1 states for classical bits. This is called the \textit{Dirac notation}. It's possible to form \textit{linear combinations} of states, often called \textit{superpositions}:
 
-\begin{equation}
+\begin{equation} \label{eq:1}
 \bracket{\psi} = \alpha \bracket{0} + \beta \bracket{1}.
 \end{equation}
 
@@ -152,6 +153,32 @@ We can't examine a qubit to determine its quantum state (the values of $\alpha$ 
 
 There is an indirect correspondence between qubit states and their consequences, and they can be manipulated and transformed in ways that lead to measurement outcomes that depend on their properties.
 
+Classical bits are like coins: they can exist either in a heads up (1) or tails up (1) state. Qubits, OTOH, can exist in a \textit{continuum} of states between $\bracket{0}$ and $\bracket{1}$, but only ever gives ``0'' or ``1' (probabilistic) outcomes when measured. A qubit can be in the state (denoted $\bracket{+}$)
 
+\begin{equation} \label{eq:2}
+\frac{1}{\sqrt{2}} \bracket{0} + \frac{1}{\sqrt{2}} \bracket{1},
+\end{equation}
+
+which gives 0 or 1 each with probability $\frac{1}{2}$.
+
+Because $|\alpha|^2 + |\beta|^2 = 1$, we can rewrite Equation \ref{eq:1} as
+
+\begin{equation} \label{eq:3}
+\bracket{\psi} = e^{i \gamma} \left(\cos \frac{\theta}{2} \bracket{0} + e^{i \varphi} \sin \frac{\theta}{2} \bracket{1} \right)
+\end{equation}
+
+where $\theta, \varphi, \gamma \in \mathbb{R}$. We will later see that we can \textit{ignore} the factor in front because it has \textit{no observable effects} and effectively write
+
+\begin{equation} \label{eq:4}
+\bracket{\phi} = \cos \frac{\theta}{2} \bracket{0} + e^{i \varphi} \sin \frac{\theta}{2} \bracket{1}
+\end{equation}
+
+The numbers $\theta$ and $\varphi$ define a point on the unit 3D sphre, called the \textit{Bloch sphere}, useful for visualizing state of a single qubit (Figure \ref{fig:1}).
+
+\begin{figure} \label{fig:1}
+	\centering
+	\includegraphics[width=0.5\textwidth]{bloch_sphere.png}
+	\caption{Bloch sphere representation of a qubit.}
+\end{figure}
 
 \end{document}

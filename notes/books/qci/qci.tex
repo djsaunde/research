@@ -13,7 +13,7 @@
 
 \graphicspath{ {../../../figures/qci/} }
 
-\title{Notes: Quantum Computation and Quantum Information: 10th Anniversary Edition}
+\title{Notes: \\Quantum Computation and Quantum Information: \\10th Anniversary Edition}
 \author{Daniel Saunders}
 
 \begin{document}
@@ -24,7 +24,7 @@
 
 \begin{enumerate}
 	\item Some \textit{emphasis} is from the book, some is added.
-	\item Abbreviations such as QC may interchangeably refer to quantum computation and quantum computer.
+	\item Abbreviations such as QC may interchangeably refer to \textit{quantum computation} and \textit{quantum computer}.
 \end{enumerate}
 
 \part{Fundamental concepts}
@@ -57,9 +57,9 @@ Since then, several techniques for controlling single quantum states have been d
 
 The ability to control single QM systems is essential in order to harness QM for QCI applications.
 
-Efforts to build quantum information processing (QIP) systems have resulted in modest success. Small quantum computers (QCs) capable of dozens of operations on a few \textit{qubits} are the state of the art (SOTA). Experimental prototypes for \textit{quantum cryptography} have also been demonstrated.
+Efforts to build quantum information processing (QIP) systems have resulted in modest success. Small quantum computers (QCs) capable of dozens of operations on a few \textit{qubits} are the state of the art (SOTA). Experimental prototypes for \textit{quantum cryptography} have also been demonstrated. \\
 
-\textbf{Turning to computer science}:
+\textbf{Turning to computer science}: \\
 
 \href{https://en.wikipedia.org/wiki/Alan_Turing}{Alan Turing} developed the notion of the programmable computer, a model of computation known as the \textit{Turing machine} (TM). He showed there is a \textit{Universal Turing machine} (UTM) capable of simulating any other TM. He claimed the UTM \textit{completely captures} what it means to perform an algorithmic task; i.e., if an algorithm can be performed on any hardware, there is an equivalent algorithm which does the same thing on a UTM. This is known as the \textit{Church-Turing thesis} (CT thesis) (after Alan Turing and \href{https://en.wikipedia.org/wiki/Alonzo_Church}{Alonzo Church}).
 
@@ -94,9 +94,9 @@ Designing quantum algorithms (QAs) seems to be hard, perhaps because designers f
 \item The QA much be better than any existing classical algorithm. Although a QA may make use of aspects of QM, it may not be of interest as a classical algorithm (CA) with similar performance characteristics may exist.
 \end{enumerate}
 
-What is is that makes QCs more powerful than CCs? What class of problems can be solved efficiently on QCs, and how does that compare to the same class of problems for CCs?
+What is is that makes QCs more powerful than CCs? What class of problems can be solved efficiently on QCs, and how does that compare to the same class of problems for CCs? \\
 
-\textbf{Turning to information theory}:
+\textbf{Turning to information theory}: \\
 
 1948: \href{https://en.wikipedia.org/wiki/Claude_Shannon}{Claude Shannon} published a pair of papers on the foundations of the theory of information and communication. Key step: \textit{mathematically defining hte concept of information}. Two key questions relation to communication of information over a channel:
 
@@ -122,9 +122,9 @@ Quantum information theory (QIT) follows a similar developments. 1995: \href{htt
 
 \textit{Networked information theory}: The study of networks of multiple communications channels.
 
-Study of networked QIT is in its infancy; no unifying theory of networked IT exists for QCs. 
+Study of networked QIT is in its infancy; no unifying theory of networked IT exists for QCs. \\
 
-\textbf{Turning to cryptography}:
+\textbf{Turning to cryptography}: \\
 
 Cryptography is the problem of doing communication or computation with two or more parties who many not trust each other. Secret communication can be accomplished using a \textit{cryptographic protocol}, distinguishing between \textit{private key} and \textit{public key cryptosystems}.
 
@@ -164,7 +164,7 @@ Classical bits are like coins: they can exist either in a heads up (1) or tails 
 
 which gives 0 or 1 each with probability $\frac{1}{2}$.
 
-Because $|\alpha|^2 + |\beta|^2 = 1$, we can rewrite Equation \ref{eq:1} as
+Because $|\alpha|^2 + |\beta|^2 = 1$, we can rewrite Equation \ref{eq:1.1} as
 
 \begin{equation} \label{eq:1.3}
 \bracket{\psi} = e^{i \gamma} \left(\cos \frac{\theta}{2} \bracket{0} + e^{i \varphi} \sin \frac{\theta}{2} \bracket{1} \right)
@@ -180,7 +180,7 @@ The numbers $\theta$ and $\varphi$ define a point on the unit 3D sphere, called 
 
 \begin{figure} \label{fig:1.1}
 	\centering
-	\includegraphics[width=0.5\textwidth]{bloch_sphere.png}
+	\includegraphics[width=0.4\textwidth]{bloch_sphere.png}
 	\caption{Bloch sphere representation of a qubit.}
 \end{figure}
 
@@ -201,7 +201,7 @@ A two qubit system has four \textit{computational basis states}: $\bracket{00}, 
 The condition that probabilities sum to one is expressed by the \textit{normalization condition} that $\sum_{x \in \{0, 1\}^2} |\alpha_x|^2 = 1$. Measuring the first qubit alone gives 0 with probability $|\alpha_{00}|^2 + |\alpha_{01}|^2$, leaving the post-measurement state as:
 
 \begin{equation} \label{eq:1.5}
-\brack{\phi'} = \frac{\alpha_{00} \bracket{00} + \alpha_{01} \bracket{01}}{\sqrt(|\alpha_{00}|^2 + |\alpha_{01}|^2)}.
+\bracket{\phi'} = \frac{\alpha_{00} \bracket{00} + \alpha_{01} \bracket{01}}{\sqrt(|\alpha_{00}|^2 + |\alpha_{01}|^2)}.
 \end{equation}
 
 The post-measurement state is \textit{re-normalized} by the factor $\sqrt{|\alpha_{00}|^2 + |\alpha_{01}|^2}$ so that it still satisfies the normalization condition.
@@ -218,6 +218,50 @@ We may consider a system of $n$ qubits with computational basis states of the fo
 
 \subsection{Quantum computation}
 
+Changes occurring to a quantum state can be described using \textit{quantum computation}. QCs are built from \textit{quantum circuits} with wires and \textit{quantum gates} to carry / manipulate quantum information.
 
+\subsubsection{Single qubit gates}
+
+Quantum \texttt{NOT} gate acts \textit{linearly}: takes the state
+
+\begin{equation} \label{eq:1.8}
+\alpha \bracket{0} + \beta \bracket{1}
+\end{equation}
+
+to the corresponding state where the roles of $\bracket{0}$ and $\bracket{1}$ are interchanged:
+
+\begin{equation} \label{eq:1.9}
+\alpha \bracket{1} + \beta \bracket{0}.
+\end{equation}
+
+Linear behavior is a general property of QM, and well-motivated empirically; nonlinear behavior can lead to apparent paradoxes such as time travel, faster-than-light communication, and violations of the second law of thermodynamics.
+
+A matrix $X$ can be used to represent the quantum \texttt{NOT} gate, following from the linearity of quantum gates (QGs):
+
+\begin{equation} \label{eq:1.10}
+X \equiv \left [ \begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix} \right ]
+\end{equation}
+
+QGs on single qubits can be described by two by two matrices. The appropriate condition on matrices representing QGs is that matrices $U$ describing single qubit gates be \textit{unitary}: $U^\dagger U = I$, where $U^\dagger$ is the \textit{adjoint} of $U$.
+
+This \textit{unitarity} condition is the only constraint on QGs. Any unitary matrix specifies a valid QG. There are many non-trivial single qubit gates; e.g., the $Z$ gate:
+
+\begin{equation} \label{eq:1.13}
+Z \equiv \left [ \begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix} \right ]
+\end{equation}
+
+and the \textit{Hadamard gate}:
+
+\begin{equation} \label{eq:1.14}
+H \equiv \frac{1}{\sqrt{2}} \left [ \begin{smallmatrix} 1 & 1 \\ 1 & -1 \end{smallmatrix} \right ].
+\end{equation}
+
+In the Bloch sphere picture, it turns out that single QGs correspond to rotations and reflections of the sphere.
+
+\begin{figure} \label{fig:1.4}
+	\centering
+	\includegraphics[width=0.75\textwidth]{hadamard_bloch_sphere.png}
+	\caption{Visualization of the Hadamard gate on the Bloch sphere acting on the input state $\frac{\bracket{0} + \bracket{1}}{\sqrt{2}}$.}
+\end{figure}
 
 \end{document}

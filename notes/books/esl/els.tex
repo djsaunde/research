@@ -1,0 +1,61 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[left=2cm, right=4cm, top=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+\numberwithin{equation}{section}
+
+\newcommand{\bracket}[1]{|#1\rangle}
+
+\graphicspath{ {../../../figures/esl/} }
+
+\title{Notes: \\The Elements of Statistical Learning}
+\author{Daniel Saunders}
+
+\begin{document}
+
+\maketitle
+
+\textbf{Notes}
+
+\begin{enumerate}
+	\item Some \textit{emphasis} is from the book, some is added.
+	\item Abbreviationsare used liberally and must sometimes be inferred from context.
+\end{enumerate}
+
+\section{Introduction}
+\label{chapter:1}
+
+\textit{Statistical learning} plays a key role in many areas of science, namely statistics, data mining, and artificial intelligence, and intersects with engineering and other disciplines.
+
+The book is about learning from data. Typically, we have a quantitative or categorical outcome measurement that we want to predict based on a set of \textit{features}. We have a \textit{training} set of data, in which observe both outcome and feature for a set of objects. Using this data, we build a prediction model (\textit{learner}) which enables us to predict outcomes for unseen objects.
+
+The above describes the \textit{supervised learning} problem, called so because of the presence of the outcome measurement to guide the learning process. In the \textit{unsupervised learning} problem, no outcome measurements are available, so we must instead describe how the data are organized or clustered.
+
+\section{Overview of Supervised Learning}
+
+\subsection{Introduction}
+
+For each of the examples in Chapter \ref{chapter:1}, there is a set of variables known as the \textit{inputs} (measured or preset), which have influence over one or more \textit{outputs}. For each example, the goal is to use the inputs to predict the outputs. This is known as \textit{supervised learning}.
+
+In the statistics / pattern recognition literature, the inputs are often called the \textit{predictors}, \textit{independent variables}, or \textit{features}, whereas the outputs are called the \textit{responses} or \textit{dependent variables}.
+
+\subsection{Variables Types and Terminology}
+
+Outputs variables may vary in nature; some \textit{quantitative} measurements are larger than others, and close measurements are close in nature. On the other hand, \textit{qualitative} measurements assume values in a finite set, without explicit ordering, and sometimes are descriptive labels rather than numbers to denote the classes. Qualitative variables are sometimes referred to as \textit{categorical} variables, \textit{discrete} variables, or \textit{factors}.
+
+The distinction in output type has led to a naming convention for prediction tasks: \textit{regression} when we predict quantitative outputs, and \textit{classification} when we predict qualitative outputs. Both can be viewed as tasks in function approximation.
+
+Inputs can also vary in measurement type, with some qualitative and some quantitative variables. Some methods are better suited to one type or the other, or both.
+
+A third variable type is \textit{ordered categorical} (e.g., small, medium, or large), where there is an ordering, but no metric notion is appropriate.
+
+Qualitative variables are typically represented numerically by codes (sometimes referred to as \textit{targets}). Binary variables can be represented simply by 0 and 1, or -1 and 1. With more than two categories, a commonly used coding is via \textit{dummy variables} (\textit{one-hot encoding}), where a $K$-level qualitative variables is represented by a vector of $K$ bits, only one of which is ``on'' at a time.
+
+\subsection{Two Simple Approaches to Prediction: Least Squares and Nearest Neighbors}
+
+\end{document}
